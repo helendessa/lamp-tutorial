@@ -56,14 +56,15 @@ h1 {
 }
 
 .nav-menu ul li a {
+    display: inline-block;
     color: #ecf0f1;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: color 0.3s, transform 0.3s;
 }
 
 .nav-menu ul li a:hover {
-    color: #ffffff;
     transform: scale(1.1);
 }
 
@@ -81,10 +82,14 @@ h1 {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    padding: 0.5em;
+    border-radius: 16px;
+    transition: background-color 0.3s;
 }
 
 .social-links a:hover {
     color: #ffffff;
+    background-color: #2575fc;
 }
 
 .social-links i {
