@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor Web: LAMP</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+                <h1>Servidor Web: LAMP</h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#sobre">Sobre o LAMP</a></li>
+                    <li><a href="#tutorial">Tutorial</a></li>
+                    <li><a href="#referencias">Referências</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="https://github.com/helendessa">
+                    <i class="fab fa-github"></i>
+                    <span>Helen Dessa</span>
+                </a>
+                <a href="https://github.com/Kaiki098">
+                    <i class="fab fa-github"></i>
+                    <span>Kaiki Alvarenga</span>
+                </a>
+                <a href="https://github.com/batista-s">
+                    <i class="fab fa-github"></i>
+                    <span>Batista</span>
+                </a>
+            </div>
+        </div>
+
+    </header>
+    <main class="container">
+        <section id="sobre">
+            <h2>Sobre o LAMP</h2>
+            <p>LAMP é um conjunto de tecnologias de código aberto composto por Linux, Apache, MySQL e PHP/Perl/Python, amplamente utilizado no desenvolvimento, hospedagem e manutenção de aplicações web, tanto pela sua robustez, quanto pela sua gratuidade e facilidade de acesso.</p>
+            <div class="lamp-stack">
+                <div class="lamp-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" alt="Linux Logo">
+                    <h3>Linux</h3>
+                    <p>Sistema operacional que proporciona a base segura e estável para a operação das outras ferramentas.</p>
+                </div>
+                <div class="lamp-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Apache_HTTP_server_logo_%282019-present%29.svg" alt="Apache Logo">
+                    <h3>Apache</h3>
+                    <p>Servidor web que processa as requisições e fornece conteúdo aos usuários.</p>
+                </div>
+                <div class="lamp-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" alt="MySQL Logo">
+                    <h3>MySQL</h3>
+                    <p>Sistema de gerenciamento de banco de dados responsável pelo armazenamento e controle de dados da aplicação.</p>
+                </div>
+                <div class="lamp-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP Logo">
+                    <h3>PHP/Perl/Python</h3>
+                    <p>Linguagens de programação usadas em projetos web, permitindo a criação de páginas interativas e conectadas ao MySQL.</p>
+                </div>
+            </div>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3><i class="fas fa-plus-circle" style="color: green;"></i> Prós</h3>
+                    <ul>
+                        <li>Instalação e configuração descomplicada</li>
+                        <li>Ferramentas bem estabelecidas no mundo da tecnologia</li>
+                        <li>Segurança, estabilidade e acessibilidade</li>
+                        <li>Flexibilidade por serem open-source</li>
+                        <li>Permitem diversas adaptações</li>
+                        <li>Modularidade do Apache possibilita maior customização</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h3><i class="fas fa-minus-circle" style="color: red;"></i> Contras</h3>
+                    <ul>
+                        <li>Performance do Apache em projetos grandes com muitas requisições</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Derivados do LAMP</h3>
+            <ul>
+                <li>WAMP — substituindo o Linux por Windows</li>
+                <li>XAMPP — multiplataforma, com uso de Perl e PHP</li>
+            </ul>
+        </section>
+        <section id="tutorial">
+            <h2>Implementação</h2>
+            <p>Neste tutorial, você aprenderá a implementar uma aplicação web com o servidor Apache, em uma máquina virtual Ubuntu Server, seguindo um passo-a-passo de instalação de todos os seus componentes.</p>
+            <h3>Configuração da rede da máquina virtual</h3>
+            <p>Para permitir que a máquina virtual obtenha um IP da mesma rede do computador, siga os passos abaixo:</p>
+            <ol>
+                <li>Altere a configuração de rede padrão NAT para Bridge. Dessa forma, a máquina virtual se comportará como um dispositivo real na rede, recebendo um IP dentro da mesma faixa do roteador.</li>
+                <li>Acesse as configurações da máquina virtual, na opção de configuração localizada entre as opções de descartar e log.</li>
+                <li>Na aba de rede, troque a configuração do adaptador para Placa em modo Bridge.</li>
+            </ol>
+            <p><img src="" alt="Configuração da máquina virtual"></p>
+            <p><img src="" alt="Configuração da rede"></p>
+            <h3>Instalação do servidor web</h3>
+            <p>Para instalar as ferramentas LAMP, siga os passos abaixo:</p>
+            <ol>
+                <li>Atualize os pacotes do Ubuntu com os seguintes comandos:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>sudo apt update</code></pre>
+                </div>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>sudo apt upgrade</code></pre>
+                </div>
+                <li>Instale o pacote LAMP com o comando:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>sudo apt install lamp-server^</code></pre>
+                </div>
+                <li>Execute o comando abaixo para obter o endereço IP da máquina:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>ip addr</code></pre>
+                </div>
+                <li>Procure pelo endereço <code>inet</code> da máquina, que será utilizado para acessar o servidor a partir de outros dispositivos na rede.</li>
+            </ol>
+            <p><img src="" alt="IP da máquina virtual"></p>
+            <li>Abra esse endereço em um navegador de outro dispositivo na rede. A exibição da página padrão do Apache indicará que a instalação do servidor Apache foi concluída com sucesso.</li>
+            <p><img src="" alt="Página do servidor Web"></p>
+            <h3>Editando o conteúdo da página web</h3>
+            <p>Para editar o conteúdo da página web do servidor, siga os passos abaixo:</p>
+            <ol>
+                <li>Altere para a raiz do sistema:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>cd /</code></pre>
+                </div>
+                <li>Acesse a pasta <code>html</code>:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>cd var/www/html</code></pre>
+                </div>
+                <li>Clone o repositório desejado usando o comando abaixo, substituindo <code>&lt;URL&gt;</code> pela URL HTTP do projeto:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>sudo git clone &lt;URL&gt;</code></pre>
+                </div>
+                <li>Apague o arquivo <code>index.html</code> padrão encontrado na pasta <code>html</code> com o comando:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>sudo rm -rf index.html</code></pre>
+                </div>
+                <li>Mova todos os arquivos dentro da pasta do projeto importado para fora, substituindo <code>[projeto]</code> pelo nome da pasta do projeto clonado:</li>
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyCode(this)"><i class="fas fa-clipboard"></i></button>
+                    <pre><code>sudo mv [projeto]/* ./</code></pre>
+                </div>
+                <li>Acesse a página usando o IP da máquina virtual e verifique a mudança do conteúdo da página.</li>
+            </ol>
+            <p><img src="" alt="Entrando na pasta html"></p>
+            <p><img src="" alt="Clonando repositório"></p>
+        </section>
+        <section id="referencias">
+            <h2>Referências</h2>
+            <ul>
+                <li>UBUNTU. Get started with LAMP applications. Disponível em: <a href="https://ubuntu.com/server/docs/get-started-with-lamp-applications">https://ubuntu.com/server/docs/get-started-with-lamp-applications</a>. Acesso em: 26/01/2025.</li>
+                <li>APACHE. Getting Started. Disponível em: <a href="https://httpd.apache.org/docs/2.4/getting-started.html">https://httpd.apache.org/docs/2.4/getting-started.html</a>. Acesso em: 26/01/2025.</li>
+                <li>GITHUB. Cloning a Repository. Disponível em: <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository</a>. Acesso em: 26/01/2025.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 LAMP Website, por Helen Dessa, Kaiki Alvarenga e Maria Clara Batista</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+    <script>
+        function copyCode(button) {
+            const codeBox = button.nextElementSibling;
+            const code = codeBox.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-clipboard"></i>';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
