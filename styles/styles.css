@@ -160,18 +160,16 @@ h2 {
     font-size: 1.5em;
 }
 
-/* 
-Just keeping this for reference
 footer {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #ecf0f1;
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-} */
+}
 
 .code-box {
     background: #f4f4f4;
@@ -231,6 +229,31 @@ footer {
 .lamp-images img {
     max-width: 100px;
     height: auto;
+}
+
+.references-list {
+    list-style: none;
+    padding: 0;
+}
+
+.references-list li {
+    margin-bottom: 10px;
+}
+
+.references-list a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.references-list a:hover {
+    color: #2980b9;
+    transform: scale(1.05);
+}
+
+.references-list strong {
+    font-weight: bold;
 }
 
 /* Responsive Styles */
