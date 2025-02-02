@@ -28,6 +28,8 @@ h1 {
     font-size: 2.5em;
     font-weight: 700;
     letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
 }
 
 .menu-icon {
@@ -56,15 +58,14 @@ h1 {
 }
 
 .nav-menu ul li a {
-    display: inline-block;
     color: #ecf0f1;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.1em;
     transition: color 0.3s, transform 0.3s;
 }
 
 .nav-menu ul li a:hover {
+    color: #ffffff;
     transform: scale(1.1);
 }
 
@@ -82,14 +83,10 @@ h1 {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    padding: 0.5em;
-    border-radius: 16px;
-    transition: background-color 0.3s;
 }
 
 .social-links a:hover {
     color: #ffffff;
-    background-color: #2575fc;
 }
 
 .social-links i {
@@ -116,13 +113,14 @@ h2 {
     border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .lamp-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-around;
+    justify-content: center;
     margin: 20px 0;
 }
 
@@ -138,13 +136,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.lamp-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-height: 300px; /* Ensure all items have the same height */
 }
 
 .lamp-item img {
@@ -155,8 +149,10 @@ h2 {
 }
 
 .lamp-item h3 {
-    margin-top: 0;
+    margin-top: 10px;
     color: #2c3e50;
+    text-align: center;
+    width: 100%;
 }
 
 .lamp-item h3::first-letter {
@@ -182,8 +178,6 @@ footer {
     padding: 10px;
     position: relative;
     margin: 20px 0;
-    display: flex;
-    align-items: center;
 }
 
 .code-box pre {
@@ -193,6 +187,7 @@ footer {
 
 .copy-button {
     position: absolute;
+    top: 10px;
     right: 10px;
     background: #3498db;
     color: #fff;
