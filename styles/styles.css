@@ -177,6 +177,8 @@ footer {
     padding: 10px;
     position: relative;
     margin: 20px 0;
+    display: flex;
+    align-items: center;
 }
 
 .code-box pre {
@@ -186,7 +188,6 @@ footer {
 
 .copy-button {
     position: absolute;
-    top: 10px;
     right: 10px;
     background: #3498db;
     color: #fff;
